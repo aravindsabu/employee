@@ -5,16 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddeployeeComponent } from './addeployee/addeployee.component';
 import { ReadComponent } from './read/read.component';
+import { SearchemployeeComponent } from './searchemployee/searchemployee.component';
+import { RouterModule,Routes } from '@angular/router';
 
+const appRoutes:Routes=[
+  {
+    path:"",component:AddeployeeComponent
+  },
+  {
+    path:"search",component:SearchemployeeComponent
+  },
+]
 @NgModule({
   declarations: [
     AppComponent,
     AddeployeeComponent,
-    ReadComponent
+    ReadComponent,
+    SearchemployeeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
